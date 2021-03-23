@@ -28,7 +28,7 @@ exports.getusers = async (req, res) => {
     const response = await User.find();
     if (response.length === 0) {
       res
-        .status(404)
+        .status(400)
         .send({ msg: "There is no user! Please add one", response });
       return;
     }

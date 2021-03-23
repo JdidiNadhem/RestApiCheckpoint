@@ -4,13 +4,14 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import UsersList from "./Components/UsersList/UsersList";
 import AddUser from "./Components/AddUser/AddUser";
+import Footer from "./Components/Footer/Footer";
+import Error from "./Components/Error/Error";
 
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <header>
         <Navbar />
       </header>
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/users_list" component={UsersList} />
           <Route exact path={["/add_user", "/edit_user"]} component={AddUser} />
+          <Route exact path="/*" component={Error} />
         </Switch>
       </main>
       <footer>
